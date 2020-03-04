@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Jom</title>
+  <title>จองกิจนิมนต์</title>
 
   
    <!-- Custom fonts for this template -->

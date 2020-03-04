@@ -179,7 +179,7 @@
                       <th tabindex="0" rowspan="1" colspan="1" style="width:25%;"><h6>สถานะ</h6></th>
                       
                       
-                    </tr>
+                    </tr> 
                   </thead>
                     <tbody>
                     <?php foreach ($list_monkcheck as $fab) { ?>

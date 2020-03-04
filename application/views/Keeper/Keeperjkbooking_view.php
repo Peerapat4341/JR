@@ -275,7 +275,19 @@
                                 </div>
                             </div>
                         </div>
+<?php 
+$pp = $this->db->get('tb_booking');
+$pp1 = $pp->row_array();
 
+$this->db->where('mc_date',$pp1['bk_date']);
+$oo = $this->db->get('tb_monkcheck');
+ $oo1 = $oo->row_array(); 
+ 
+ $this->db->where('monk_id',$oo1['monk_id']);
+ $ii = $this->db->get('tb_monk');
+ $ii1 = $ii->row_array();
+
+ ?>
                         
                     <?php 
 
@@ -288,6 +300,9 @@
 
 
                    ?>
+
+                   <?php  $bk = $pp1['bk_date'];
+                    $mc = $oo1['mc_date']; ?>
                    	<?php	foreach ($results as $result) {
                        ?>
                    <table class="table table-bordered" id="dataTable" width="10px"  cellspacing="0">
@@ -300,7 +315,7 @@
                   </thead>
                   <!-- <tr role="row"> -->
                   <?php ?>
-                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php echo $result['monk_name'];  ?>  </td> 
+                       <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>> <?php if($bk == $mc){ echo $ii1['monk_name'];} ?>  </td> 
                                 <td <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $result['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $result['monk_id']; ?>" ></td>                  
                     </div>               
                       </div>         
