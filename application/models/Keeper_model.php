@@ -58,7 +58,7 @@ public function __construct(){
         echo "</script>";
 
         }else{ // ถ้าไม่ซ้ำให้เพิ่มข้อมูลเข้าไปปกติ
-
+ 
                 $data = array
                 (
                     'dkw_name'  => $this->input->post('dkw_name'),
