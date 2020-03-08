@@ -240,10 +240,7 @@
                                 <a href="<?php echo site_url('Keeper/Keeperjkbooking/'.$fab->bk_id);?>" 
                                 class="btn btn-warning"> <i>จัดการ</i></a>
                           </td>
-                          <!-- <td>
-                              <a href="<?php echo site_url('Keeper/deletedaykeywat/'.$fab->dkw_id);?>" 
-                                class="btn btn-danger" > <i>ลบ</i></a>
-                          </td> -->
+                           
                    </tr>
                     <?php } ?>
                   </tbody>

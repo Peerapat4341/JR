@@ -229,7 +229,7 @@ public function __construct(){
         if($query){
            echo "<script>"; 
            echo "alert('แก้ไขข้อมูลสำเร็จ');";
-           
+            
            echo "</script>";
        }else{
            echo "<script>";

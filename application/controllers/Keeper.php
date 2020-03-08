@@ -180,7 +180,8 @@ class Keeper extends CI_Controller {
 			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
 			  $this->db->where('monk_id',$checkbox[$i]);
 		$data3 = array(
-		'sm_id' => '1'
+		'sm_id' => '1',
+		'bk_id' => $idtestt
 		);
 		$this->db->update('tb_monk',$data3);
 		 }
@@ -206,7 +207,8 @@ class Keeper extends CI_Controller {
 				echo $pp1['sm_id'];
 
 				$dataaa = array(
-					'sm_id' => 0
+					'sm_id' => 0,
+					'bk_id' => 0,
 					);
 				$this->db->where('monk_id',$pp['monk_id']);
 				$this->db->update('tb_monk',$dataaa);

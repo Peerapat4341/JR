@@ -43,7 +43,7 @@ class Monk extends CI_Controller {
 
 	public function Monkcheckadd()
 	{
-		$mem_id = $_SESSION['mem_id']; 
+		$mem_id = $_SESSION['monk_id']; 
 
 		$this->Monk_model->Monkcheckadd();	
         redirect('Monk/Monkcheck','refresh');

@@ -31,6 +31,21 @@ class Monk_model extends CI_Model{
 
     public function Monkcheckadd() 
     {
+        $uu = $this->session->userdata('monk_id');
+
+        $mc_date = $this->input->post('mc_date');
+        $this->db->select('mc_date');
+        $this->db->where('mc_date',$mc_date);
+        $this->db->where('monk_id',$uu);
+        $query = $this->db->get('tb_monkcheck');
+        $num = $query->num_rows(); //เช็คว่ามีข้อมูลนี้อยู่ในตารางไหม
+        if($num > 0) // ถ้ามีมากกว่า 0 ขึ้นไป คือมีข้อมูลซ้ำ
+        {
+        echo "<script>"; // ถ้าซ้ำจะโชว์ตรงนี้
+        echo "alert('วันที่ซ้ำ กรุณาเพิ่มใหม่อีกครั้ง');";
+        echo "window.history.back();";
+        echo "</script>";
+        }else{
         $this->db->where('dkw_date',$this->input->post('mc_date'));
         $query = $this->db->get('tb_daykeywat');
         $dada = $query->row_array();
@@ -65,7 +80,7 @@ class Monk_model extends CI_Model{
                 }
                
     }
-
+    }
     public function readbkmonk($monk_id) 
         {
         $this->db->select('*');
