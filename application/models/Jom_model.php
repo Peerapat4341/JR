@@ -72,7 +72,7 @@ class Jom_model extends CI_Model{
         return (isset($id)) ? $id : FALSE;
     }
     public function Jomaddbooking2($data){
-        $this->db->insert('tb_statusmonk', $data);
+        $this->db->insert('tb_monk', $data);
     }
     // $data = array(
 

@@ -64,7 +64,8 @@ public function __construct(){
                 (
                     'dkw_name'  => $this->input->post('dkw_name'),
                     'dkw_date'  => $this->input->post('dkw_date'),
-                    'dkw_detail'  => $this->input->post('dkw_detail')
+                    'dkw_detail'  => $this->input->post('dkw_detail'),
+                    
                     
 
                 );

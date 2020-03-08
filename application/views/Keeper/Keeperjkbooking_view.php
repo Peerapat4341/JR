@@ -189,7 +189,7 @@
             </div>
   </div>
   <!-- /.container-fluid -->
-
+<?php if(!empty($show)){ ?>
   <div class="card-body">
   <?php  $stringrow = base_url(uri_string());
         $arraystate = (explode("/", $stringrow));
@@ -320,7 +320,7 @@ $oo = $this->db->get('tb_monkcheck');
                  
                    
                        <td> <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php// } ?> <?php if($bk == $mc){ echo $jj1['monk_name'];} ?>  </td> 
-                       <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $jj1['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $jj1['monk_id']; ?>" ></td>
+                       <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $jj1['monk_jobmonk']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $jj1['monk_id']; ?>" ></td>
                        <?php	 $this->db->select('tb_monk.*');
                    $this->db->from('tb_monk');
                    $this->db->where('level_id',5);                 
@@ -328,7 +328,7 @@ $oo = $this->db->get('tb_monkcheck');
                    $results = $query->result_array();
                        ?>
                       
-                           <!-- <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $hee1['sm_id']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $hee1['monk_id']; ?>" ></td>                   -->
+                           <!-- <td <?php //$hee = $result['sm_id']; if($hee > 0){ ?> <?php //} ?>><input type="checkbox" id="customCheck1" name="customCheck1[]" <?php $hee = $hee1['monk_jobmonk']; if($hee > 0){ ?> style="display:none" <?php } ?>  value="<?php echo $hee1['monk_id']; ?>" ></td>                   -->
                     </div>   <?php } ?>            
                       </div>         
                       
@@ -337,7 +337,7 @@ $oo = $this->db->get('tb_monkcheck');
                     </form>
                 </div>
 
-
+                   <?php } ?>
 </div>
 <!-- End of Main Content -->
 

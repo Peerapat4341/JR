@@ -182,7 +182,20 @@ class Admin_model extends CI_Model{
         return FALSE;
     }
 
-    
+    public function readm($monk_id) 
+    {
+    $this->db->select('*');
+    $this->db->from('tb_monk');
+    $this->db->where('monk_id',$monk_id);
+    $query = $this->db->get();
+    if($query->num_rows()>0)
+    {
+        $data = $query->row();
+        return $data;
+    }
+    return FALSE;
+}
+
     public function Admineditkeeper()
     {
         $data = array

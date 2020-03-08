@@ -52,7 +52,7 @@ class Monk_model extends CI_Model{
         if($this->input->post('mc_date') == $dada['dkw_date']){
             $qq = $dada['dkw_id'];
         }else{
-            $qq = '0';
+            $qq = Null;
         }
         
     $data = array(

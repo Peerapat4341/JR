@@ -149,9 +149,9 @@
                             <div class="name">ชื่อผู้ใช้งาน</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_username"
+                                    <input class="form-control" type="text" name="monk_username"
                                     readonly
-                                    value="<?php echo $edit->mem_username;?>">
+                                    value="<?php echo $edit->monk_username;?>">
                                 </div>
                             </div>
                         </div>
@@ -159,9 +159,9 @@
                             <div class="name">รหัสผ่าน</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_password"
+                                    <input class="form-control" type="text" name="monk_password"
                                     required
-                                    value="<?php echo $edit->mem_password;?>">
+                                    value="<?php echo $edit->monk_password;?>">
                                 </div>
                             </div>
                         </div>
@@ -169,29 +169,20 @@
                             <div class="name">ชื่อ</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_name"
+                                    <input class="form-control" type="text" name="monk_name"
                                     required
-                                    value="<?php echo $edit->mem_name;?>">
+                                    value="<?php echo $edit->monk_name;?>">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">ที่อยู่</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_address"
-                                    required
-                                    value="<?php echo $edit->mem_address;?>">
-                                </div>
-                            </div>
-                        </div>
+                    
                         <div class="form-row">
                             <div class="name">เบอร์</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" name="mem_phone"
+                                    <input class="form-control" type="text" name="monk_phone"
                                     required
-                                    value="<?php echo $edit->mem_phone;?>">
+                                    value="<?php echo $edit->monk_phone;?>">
                                 </div>
                             </div>
                         </div>
@@ -265,7 +256,7 @@
                             </div>
                         </div> -->
                         <div>
-                        <input type="hidden" name="mem_id"   value="<?php echo $edit->mem_id;?>"> 
+                        <input type="hidden" name="monk_id"   value="<?php echo $edit->monk_id;?>"> 
 
                             <button class="btn btn--radius-2 btn--red" type="submit">ยืนยัน</button>
                         </div>

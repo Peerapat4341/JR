@@ -23,9 +23,9 @@ class Monk extends CI_Controller {
 
 	public function Monkeditprofile()
 	{
-		$mem_id = $_SESSION['mem_id'];
+		$monk_id = $_SESSION['monk_id'];
 
-		$data['edit']=$this->Admin_model->read($mem_id);
+		$data['edit']=$this->Admin_model->readm($monk_id);
 
 		$this->load->view('Monk/Monkeditprofile_view',$data);
 	}
@@ -43,7 +43,7 @@ class Monk extends CI_Controller {
 
 	public function Monkcheckadd()
 	{
-		$mem_id = $_SESSION['monk_id']; 
+		$monk_id = $_SESSION['monk_id']; 
 
 		$this->Monk_model->Monkcheckadd();	
         redirect('Monk/Monkcheck','refresh');
@@ -83,7 +83,7 @@ class Monk extends CI_Controller {
 			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
 			  $this->db->where('monk_id',$checkbox[$i]);
 		$data3 = array(
-		'sm_id' => '1'
+		'monk_jobmonk' => '1'
 		);
 		$this->db->update('tb_monk',$data3);
 		 }
@@ -106,10 +106,10 @@ class Monk extends CI_Controller {
 				$this->db->where('monk_id',$pp['monk_id']);
 				$pp2 = $this->db->get('tb_monk');
 				$pp1 = $pp2->row_array();
-				echo $pp1['sm_id'];
+				echo $pp1['monk_jobmonk'];
 
 				$dataaa = array(
-					'sm_id' => 0
+					'monk_jobmonk' => 0
 					);
 				$this->db->where('monk_id',$pp['monk_id']);
 				$this->db->update('tb_monk',$dataaa);

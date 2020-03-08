@@ -165,28 +165,46 @@ class Keeper extends CI_Controller {
 	{
 		if (isset($_POST['submit'])) {
 			//Pass the userid here
-			
-			$checkbox = $_POST['customCheck1']; 
 			$j = $_POST['sj_id'];
+			if($j == 4){
+				// $this->db->where('bk_id',$idtestt);
+				// $query = $this->db->get('tb_monk');
+				// $data = $query->result_array();
+				// foreach ($data as $pp) { 
+		
+				// 	$this->db->where('monk_id',$pp['monk_id']);
+				// 	$pp2 = $this->db->get('tb_monk');
+				// 	$pp1 = $pp2->row_array();
+				// 	echo $pp1['monk_jobmonk'];
+	
+					$dataaa = array(
+						'monk_jobmonk' => 0,
+					//	'bk_id' => null,
+						);
+				//	$this->db->where('monk_id',$pp['monk_id']);
+					$this->db->update('tb_monk',$dataaa);
+					}
+			$checkbox = $_POST['customCheck1']; 
+			
 		  
 			// print_r($checkbox);
 			for ($i=0;$i<count($checkbox);$i++) {
 				$sss=array(
-					'bk_id' => $idtestt,
+					//'bk_id' => $idtestt,
 					'monk_id' => $checkbox[$i]
 				);
 				// $this->db->insert('tb_statusmonk',$sss);
 				
-			  $this->jom_model->Jomaddbooking2($sss);//Call the modal
+			 // $this->jom_model->Jomaddbooking2($sss);//Call the modal
 			  $this->db->where('monk_id',$checkbox[$i]);
 		$data3 = array(
-		'sm_id' => '1',
-		'bk_id' => $idtestt
+		'monk_jobmonk' => '1',
+		//'bk_id' => $idtestt
 		);
 		$this->db->update('tb_monk',$data3);
 		 }
 
-		$this->db->where('bk_id',$idtestt);
+		//$this->db->where('bk_id',$idtestt);
 		
 		$data4 = array(
 		'sj_id' => $j
@@ -195,27 +213,10 @@ class Keeper extends CI_Controller {
 
 
 
-		if($j == 4){
-			$this->db->where('bk_id',$idtestt);
-			$query = $this->db->get('tb_statusmonk');
-			$data = $query->result_array();
-			foreach ($data as $pp) { 
-	
-				$this->db->where('monk_id',$pp['monk_id']);
-				$pp2 = $this->db->get('tb_monk');
-				$pp1 = $pp2->row_array();
-				echo $pp1['sm_id'];
-
-				$dataaa = array(
-					'sm_id' => 0,
-					'bk_id' => 0,
-					);
-				$this->db->where('monk_id',$pp['monk_id']);
-				$this->db->update('tb_monk',$dataaa);
-				}
+		
 		}
 
-		}
+		
 	
 		redirect('Keeper/Keeperdash');
 	
